@@ -10,6 +10,7 @@ export const fetchNoToken = (endpoint, data, method = "GET") => {
       method,
       headers: {
         "Content-Type": "application/json",
+        "mode":"cors"
         
         
       },
@@ -27,6 +28,7 @@ export const fetchWithToken = (endpoint, data, method = "GET") => {
       method,
       headers: {
         "x-token": token,
+        "mode":"cors"
         
         
       },
@@ -37,6 +39,7 @@ export const fetchWithToken = (endpoint, data, method = "GET") => {
       headers: {
         "Content-Type": "application/json",
         "x-token": token,
+        "mode":"cors"
        
         
       },
