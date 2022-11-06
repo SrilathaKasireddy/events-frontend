@@ -10,8 +10,7 @@ export const fetchNoToken = (endpoint, data, method = "GET") => {
       method,
       headers: {
         "Content-Type": "application/json",
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+        
       },
       body: JSON.stringify(data),
     });
@@ -27,8 +26,7 @@ export const fetchWithToken = (endpoint, data, method = "GET") => {
       method,
       headers: {
         "x-token": token,
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+        
       },
     });
   } else {
@@ -37,8 +35,7 @@ export const fetchWithToken = (endpoint, data, method = "GET") => {
       headers: {
         "Content-Type": "application/json",
         "x-token": token,
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+        
       },
       body: JSON.stringify(data),
     });
