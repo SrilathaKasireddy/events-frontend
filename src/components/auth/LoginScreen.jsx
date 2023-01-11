@@ -34,6 +34,8 @@ const LoginScreen = () => {
   };
 
   return (
+    <div style={{textAlign: "center"}}>
+      
     <section className="card">
       <div className="card__row card__row--right">
         <div className="card__body">
@@ -78,6 +80,7 @@ const LoginScreen = () => {
         </div>
       </div>
       <div className="card__body">
+        
           <h2 className="card__subtitle" style={{width:200}}>Don't have an account?</h2>
           
           <Link className="" 
@@ -93,7 +96,11 @@ const LoginScreen = () => {
         </div>
         
     </section>
+    <h4 style={{marginTop:"10%"}}>Made With ❤️ By Srilatha Kasireddy
+      </h4>
     
+    
+    </div>
   );
 };
 export default LoginScreen;
