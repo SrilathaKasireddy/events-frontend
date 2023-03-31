@@ -71,37 +71,37 @@ export const checkingErrors = (errors) => {
   };
 };
 
-// export const startChecking = () => {
-//   return async (dispatch) => {
-//     fetchWithToken("auth/renew")
+export const startChecking = () => {
+  return async (dispatch) => {
+    fetchWithToken("auth/renew")
     
-//       .then((resp) => resp.json())
-//       .then((data) => {
-//         if (data.ok) {
+      .then((resp) => resp.json())
+      .then((data) => {
+        if (data.ok) {
           
-//           const { user, token } = data;
-//           const { _id: id, name } = user;
+          const { user, token } = data;
+          const { _id: id, name } = user;
 
-//           localStorage.setItem("token", token);
-//           localStorage.setItem("token-init-date", new Date().getTime());
+          localStorage.setItem("token", token);
+          localStorage.setItem("token-init-date", new Date().getTime());
 
-//           dispatch(
-//             login({
-//               id,
-//               name,
-//             })
-//           );
-//         }
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//         // Swal.fire("Error", "Please, contact the administrator", "error");
-//       })
-//       .finally(() => {
-//         dispatch(checkingFinish());
-//       });
-//   };
-// };
+          dispatch(
+            login({
+              id,
+              name,
+            })
+          );
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        Swal.fire("Error", "Please, contact the administrator", "error");
+      })
+      .finally(() => {
+        dispatch(checkingFinish());
+      });
+  };
+};
 
 const checkingFinish = () => ({
   type: types.authCheckingFinish,
